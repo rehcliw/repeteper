@@ -1,5 +1,6 @@
 import React from 'react';
 import MainContainer from './containers/MainContainer.jsx';
+import styles from './styles.css';
 
 const App = () => {
   return (

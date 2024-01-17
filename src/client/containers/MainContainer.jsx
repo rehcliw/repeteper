@@ -1,9 +1,13 @@
 import React from 'react';
+import SeedEditor from '../components/SeedEditor.jsx';
 
 const MainContainer = () => {
   return (
     <div className='container'>
-      <h1>repeteper</h1>
+      <div className='outerBox'>
+        <h1 id='header'>repeteper</h1>
+        <SeedEditor />
+      </div>
     </div>
   );
 };
