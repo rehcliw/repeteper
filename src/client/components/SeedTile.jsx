@@ -1,11 +1,19 @@
 import React from 'react';
+import { flipSeedTileActionCreator } from '../actions/actions';
 
 const SeedTile = (props) => {
-  const { id } = props;
+  const { id, on, dispatch } = props;
   return (
-    <div className='seedTile' id={id}>
-      {/* <h4>a tile</h4> */}
-      tile
+    <div
+      className={`seedTile ${on}`}
+      key={id}
+      id={id}
+      onClick={(e) => {
+        // className = `seedTile ${!on}`;
+        dispatch(flipSeedTileActionCreator(on, e));
+      }}
+    >
+      f
     </div>
   );
 };
