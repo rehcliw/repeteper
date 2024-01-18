@@ -7,10 +7,12 @@ const ConfigContainer = () => {
   const tiles = useSelector((state) => state.tiles);
   const dispatch = useDispatch();
 
+  console.log('state.tiles:', tiles);
+
   return (
     <div className='innerbox'>
       <SeedEditor dispatch={dispatch} seedTiles={tiles.seedTiles} />
-      <RuleEditor dispatch={dispatch} seedTiles={tiles.rules} />
+      <RuleEditor dispatch={dispatch} rules={tiles.rules} />
     </div>
   );
 };

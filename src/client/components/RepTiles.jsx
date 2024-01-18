@@ -7,10 +7,17 @@ const RepTiles = () => {
 
   // logic for repetition here. but maybe have to refer to state...
   const rows = [];
-  let currRepTileConfig = tiles.seedTiles;
-  for (let i = 0; i < tiles.seedTiles.length; i++) {
+  // let currRepTileConfig = tiles.seedTiles;
+  for (let i = 0; i < tiles.seedTiles.length * 2; i++) {
     // for (let j = 0; j < 5; j++) {
-    rows.push(<RepTileRow rowConfig={currRepTileConfig} id={i} key={i} />);
+    rows.push(
+      <RepTileRow
+        seedConfig={tiles.seedTiles}
+        id={i}
+        key={i}
+        rules={tiles.rules}
+      />
+    );
     // repTiles.push(<RepTile tileConfig={currRepTileConfig} />);
 
     // TODO: update currRepTileConfig based on rules.. maybe in row logic, since just num rows iterations

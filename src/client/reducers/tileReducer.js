@@ -16,13 +16,11 @@ const initialState = {
 };
 
 const tileReducer = (state = initialState, action) => {
-  let seedTiles;
+  let seedTiles, rules;
 
   switch (action.type) {
     case actionTypes.FLIP_TILE:
       const tileId = action.payload.e.target.id;
-      console.log(tileId);
-      // state.seedTiles[tileId[1]][tileId[4]] = action.payload.tileState;
 
       seedTiles = state.seedTiles.slice();
       seedTiles[tileId[1]][tileId[4]] = !action.payload.tileState;
@@ -31,6 +29,17 @@ const tileReducer = (state = initialState, action) => {
         ...state,
         seedTiles,
       };
+
+    case actionTypes.ADD_RULE:
+      rules = state.rules.slice();
+      rules.push(action.payload);
+
+      return { ...state, rules };
+    case actionTypes.DELETE_RULE:
+      rules = state.rules.slice();
+      rules.pop();
+
+      return { ...state, rules };
     default: {
       return state;
     }
