@@ -1,9 +1,13 @@
 import React from 'react';
 
 const RepSubTile = (props) => {
-  const { on } = props;
+  const { id, on } = props;
 
-  return <div className={`repSubTile ${on}`}>repsubtile</div>;
+  return (
+    <div className={`repSubTile ${on}`} key={id} id={id}>
+      f
+    </div>
+  );
 };
 
 export default RepSubTile;

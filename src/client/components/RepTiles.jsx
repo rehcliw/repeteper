@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import RepTile from './RepTile.jsx';
+import RepTileRow from './RepTileRow.jsx';
 
 const RepTiles = () => {
   const tiles = useSelector((state) => state.tiles);
@@ -10,7 +10,7 @@ const RepTiles = () => {
   let currRepTileConfig = tiles.seedTiles;
   for (let i = 0; i < tiles.seedTiles.length; i++) {
     // for (let j = 0; j < 5; j++) {
-    rows.push(<RepTileRow rowConfig={currRepTileConfig[i]} />);
+    rows.push(<RepTileRow rowConfig={currRepTileConfig} id={i} key={i} />);
     // repTiles.push(<RepTile tileConfig={currRepTileConfig} />);
 
     // TODO: update currRepTileConfig based on rules.. maybe in row logic, since just num rows iterations
@@ -20,7 +20,7 @@ const RepTiles = () => {
   return (
     <div>
       <h2>reptiles</h2>
-      {repTiles}
+      {rows}
     </div>
   );
 };

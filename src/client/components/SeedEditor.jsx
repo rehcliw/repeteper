@@ -12,7 +12,7 @@ const SeedEditor = (props) => {
   }
 
   return (
-    <div key='seed editor'>
+    <div className='seedEditor'>
       <h2>seed editor</h2>
       {rows}
     </div>
