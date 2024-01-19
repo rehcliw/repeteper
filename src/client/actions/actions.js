@@ -14,3 +14,8 @@ export const deleteRuleActionCreator = () => ({
   type: types.DELETE_RULE,
   payload: null,
 });
+
+export const randomizeActionCreator = () => ({
+  type: types.RANDOM_SEED,
+  payload: null,
+});

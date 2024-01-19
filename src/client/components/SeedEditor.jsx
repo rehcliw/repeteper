@@ -1,5 +1,6 @@
 import React from 'react';
 import SeedTileRow from './SeedTileRow.jsx';
+import { randomizeActionCreator } from '../actions/actions.js';
 
 const SeedEditor = (props) => {
   const { dispatch, seedTiles } = props;
@@ -14,6 +15,7 @@ const SeedEditor = (props) => {
   return (
     <div className='seedEditor'>
       <h2>seed editor</h2>
+      <button onClick={() => dispatch(randomizeActionCreator())}>RANDOM</button>
       {rows}
     </div>
   );

@@ -4,13 +4,10 @@ import {
   deleteRuleActionCreator,
 } from '../actions/actions';
 import * as ruleTypes from '../constants/ruleTypes';
-import { DELETE_RULE } from '../constants/actionTypes';
 
 const RuleEditor = (props) => {
   const { dispatch, rules } = props;
   const buttons = [];
-
-  console.log({ ruleTypes });
 
   for (let ruleType in ruleTypes) {
     buttons.push(

@@ -40,6 +40,20 @@ const tileReducer = (state = initialState, action) => {
       rules.pop();
 
       return { ...state, rules };
+    case actionTypes.RANDOM_SEED:
+      seedTiles = state.seedTiles.slice();
+
+      for (let i = 0; i < 5; i++) {
+        // const row = [];
+        for (let j = 0; j < 5; j++) {
+          seedTiles[i][j] = Math.random() < 0.5;
+        }
+        // tiles.push(row);
+      }
+
+      // rules.pop();
+
+      return { ...state, seedTiles };
     default: {
       return state;
     }
